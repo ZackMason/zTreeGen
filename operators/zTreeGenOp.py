@@ -11,9 +11,15 @@ class ZTreeGenOpOperator(bpy.types.Operator):
         scene = context.scene
         mytool = scene.my_tool
 
-        tree = zTreeMesh(num_vert=mytool.branch_vert_count)
+        tree = zTreeMesh(num_vert=mytool.branch_vert_count, 
+            leaves=mytool.number_of_leaves,
+            grow_min =mytool.grow_min, 
+            grow_max=mytool.grow_max)
 
-        tree.create(branch_falloff=mytool.branch_falloff, branch_scale=mytool.branch_scale)
+        tree.trunk(branch_falloff=mytool.branch_falloff, branch_scale=mytool.branch_scale)
+
+        for i in range(mytool.iterations):
+            tree.grow()
 
         tree.finalize(context)
 

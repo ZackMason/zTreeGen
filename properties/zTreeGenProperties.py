@@ -41,3 +41,34 @@ class zTreeGenProperties(bpy.types.PropertyGroup):
         min=0.0,
         max=1.0
     )
+
+    number_of_leaves: IntProperty(
+        name="number of leaves",
+        description="controls how many leaves there are",
+        default=100,
+        min=1,
+        max=200
+    )
+
+    iterations: IntProperty(
+        name="number of iterations",
+        description="controls how many iterations there are",
+        default=100,
+        min=1,
+        max=200
+    )
+
+    grow_min: FloatProperty(
+        name="min grow distance",
+        description="min grow",
+        default=1.0,
+        min=0.0,
+        max=20.0
+    )
+    grow_max: FloatProperty(
+        name="max grow distance",
+        description="max grow",
+        default=10,
+        min=0.0,
+        max=100
+    )

@@ -5,7 +5,7 @@ def rand_neg():
     return random()*2.0-1.0
 
 class zPointCloud:
-    def __init__(self, count=100, height=16.0, radius=5.0):
+    def __init__(self, count=100, height=12.0, radius=5.0):
         self.count = count
         self.height = height
         self.radius = radius
